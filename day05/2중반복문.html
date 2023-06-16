@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        gap: 8px;
+    }
+    .container>div{
+        width: 200px;
+        height: 100px;
+        background-color: #fffcd7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <!-- <div class="container">
+        <div>div</div>
+        <div>div</div>
+        <div>div</div>
+        <div>div</div>
+        <div>div</div>
+    </div> -->
+
+    <script>
+    
+        document.write('<div class="container">')
+        for(let i = 0; i < 5 ; i ++){
+            document.write('<div>div</div>')
+        }
+        document.write('</div>')
+
+    </script>
+</body>
+</html>
