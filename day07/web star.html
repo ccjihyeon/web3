@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <style>
     .star{
         clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        background-color: rgb(185, 176, 255);
+        background-color: rgb(255, 254, 176);
         display: inline-block;
         width: 50px;
         height: 50px;
@@ -30,23 +30,23 @@
 
         document.write(`<div class="container">`)  
             document.write(`<div class="left">`)
-                for(let i = 0 ; i < 5; i++){
-                    for(let j = 0 ; j < 5 - i; j++){
-                        makeStar();
-                    }
-                    enter();
-                }     
+            for(let i = 0 ; i < 5; i++){
+                for(let j = 0 ; j < 5 - i; j++){
+                    makeStar();
+                }
+                enter();
+            }
                 
-                for(let i = 0 ; i < 5; i++){
+               for(let i = 0 ; i < 5; i++){
                     for(let j = 0 ; j < 1 + i; j++){
-                        makeStar();
-                    }
-                    enter();
+                  makeStar();
+                }
+                enter();
                 }
               
-
+           
             document.write(`</div>`)
-
+            
             document.write(`<div class="right">`)
            
                 for(let i = 0 ; i < 5; i++){
@@ -54,10 +54,10 @@
                         empty();
                     }
                     for(let j = 0 ; j < 5 - i ; j++){
-                    makeStar();
+                        makeStar();
                     }
                     enter();
-                } 
+                }
                 for(let i = 0 ; i < 5 ; i++){
                     for(let j = 0; j < 4 - i ; j++){
                         empty();
@@ -68,14 +68,14 @@
                     enter();
                 } 
             enter();           
-            document.write(`</div>`)
+            document.write(`</div>`)    
         document.write(`</div>`)
       
 
     
 
         
-        function makeStar(){
+            function makeStar(){
             document.write(`<div class ="star"></div>`)
         }
 

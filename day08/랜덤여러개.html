@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        당신의 점수는
+        <p>국어<span class="score"></span>점</p>
+        <p>영어<span class="score"></span>점</p>
+        <p>수학<span class="score"></span>점</p>
+        <p>과학<span class="score"></span>점</p>
+        <p>체육<span class="score"></span>점</p>
+        입니다
+    </div>
+
+    <button id="change-button">점수예측하기</button>
+
+    <script>
+        const button = document.getElementById('change-button');
+        const score = document.getElementsByClassName('score');
+
+        button.addEventListener('click' , 점수예측)
+
+        function 점수예측(){
+            for(let i = 0; i < score.length; i++){
+                score[i].innerText = Math.floor(Math.random() *51 + 50 );
+            }
+        }
+       
+        console.log(score)
+
+    </script>
+</body>
+</html>

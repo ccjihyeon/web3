@@ -1,0 +1,22 @@
+
+
+document.querySelector('css선택자')
+    ->  id, tag, class, .container > content 같은식도 가능
+        문서 위에서부터 찾는데, 가장 먼저 만나는 한개만 가져온다.
+document.getElementById('id')
+    ->  id 태그만 가능
+        한문서에서 같은 아이디는 한개만 있을수 있기 때문에 반드시 한개이다.
+
+------------------------------------------------------
+
+document.querySelectorAll('css선택자')
+    ->  id, tag, class, .container > content 같은식도 가능
+        문서내의 조건이 맞는 모든것을 가져온다.
+document.getElementsByClassName('클래스이름')
+    ->  클래스는 한 문서의 여러개 존재할수 있기 때문에
+        여러개를 동일한 클래스를 가진 모든 개체와 연결한다
+document.getElementsByTagName('tag')
+    ->  태그는 한 문서의 여러개 존재할수 있기 때문에
+        여러개를 동일한 클래스를 가진 모든 개체와 연결한다
+----------------------------------------------------------
+

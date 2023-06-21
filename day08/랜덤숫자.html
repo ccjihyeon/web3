@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="랜덤">랜덤 생성(50 ~ 100)</button>
+    
+<script>
+    
+    // Math.random(); 임의의 수를 반환해준다. 범위는 0부터 1사이 / 0이상 1미만 : 0 ~ 0.9999999999999999999
+    // 0~9까지 만들고 싶다? -> 0 ~ 0.999999999999999999999 *10 = 0 ~ 9.9999999999999999999
+    // 위의 값에서 소숫점을 탈락 시키면 0~9 math.floor
+    // 0부터 9를 만들고 싶다면 Math.floor(Math.random()*10); <- 범위를 지정해주는 숫자라고 생각하면됨 
+    // 0.999999 x 10 = 9.99999인데 Math.floor로 소숫점을 버려주니까 9가된다. 만약 10까지 범위를하려면 +1 하면됨
+    // 범위를 0말고 다른 단위부터 지정하고 싶다면 + 를 추가해준다 ex -> 50~100 이라면 Math.floor(Math.random()*51 + 50); 
+    // 랜덤값 만드는 공식 Math.floor(Math.random()*숫자범위 + 시작값); 
+
+    const 랜덤버튼 = document.getElementById('랜덤');
+    
+    랜덤버튼.addEventListener('click' , 랜덤생성);
+
+    
+    console.log(랜덤버튼) 
+    
+    
+    function 랜덤생성(){                    
+        const 랜덤숫자 = Math.floor(Math.random()*51 + 50);
+        alert(랜덤숫자);
+    }
+
+    
+
+
+</script>
+
+</body>
+</html>
