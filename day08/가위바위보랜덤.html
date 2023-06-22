@@ -50,6 +50,7 @@
         font-size: 32px;
     }
 
+
 </style>
 <body>
     <div id="game">
@@ -59,6 +60,7 @@
             <button id="rock">바위</button>
             <button id="paper">보</button>  
         </div>
+        
         <div id="result"></div>
 
 
@@ -68,6 +70,8 @@
 
             const buttons = document.querySelectorAll('button');
             buttons.forEach(button => button.addEventListener('click', play));
+
+            let computer;
 
             function play(e) {
                 const playerChoice = e.target.id;
