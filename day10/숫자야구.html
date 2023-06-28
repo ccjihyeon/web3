@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="game-board">
+            <div class="round">
+                <div class="status">
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                </div>
+                <div class="numer-container">
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                </div>
+                <div class="status">
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                    <div class="status-light"></div>
+                </div>
+                <div class="numer-container">
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                    <div class="number-place"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        
+        const 정답 = [];
+
+        for (let i = 0; i < 10; i++) {
+            let 난수;
+
+            while (true) {
+                난수 = Math.floor(Math.random() * 10);
+
+                if (정답.indexOf(난수) === -1) {
+                    break;
+                }
+            }
+
+            정답.push(난수);
+        }
+
+       
+
+        for(let i = 0; i < 7 ; i ++){
+
+            console.log(`${i + 1}번째 시도입니다.`);
+
+            const 적중 = 게임();
+
+            if(적중 === 4 ){
+                console.log('정답!');
+                break;
+            }else if (i === 9){
+                console.log('패배했습니다.');
+                console.log(`당신이 찾아 헤메던 정답은 ${정답} 입니다. `);
+            }
+        }
+
+        function 게임(){
+
+            const userInput = [];
+            let 스트라이크 = 0;
+            let 볼 = 0;
+
+            for(let i = 0 ; i < 4 ; i++ ){
+                userInput.push(Number(prompt('숫자를 입력하세요.')));
+            }
+                
+            for (let i = 0; i < 4; i++) {
+                if (정답[i] === userInput[i]) {
+                    스트라이크++;
+                }
+
+                for (let j = 0; j < 4; j++) {
+                    if (i !== j && userInput[i] === 정답[j]) {
+                        볼++;
+                    }
+                }
+            }
+         
+        
+            console.log(`스트라이크 : ${스트라이크}, 볼 : ${볼}`);
+            console.log(userInput);
+
+            return 스트라이크;
+        }
+            // userInput.pop() 배열 맨 뒤의 요소를 꺼내쓴다(배열에서 지워짐)
+            // userInput.shift() 배열 맨 앞의 요소를 꺼내쓴다 (배열에서 지워짐)
+            // userInput.splice() 몇번째거부터,몇개를 지울거냐
+
+
+
+    </script>
+</body>
+</html>
