@@ -15,8 +15,8 @@
     }
     
     .slider{
-        width: 200px;
-        height: 100px;
+        width: 300px;
+        height: 200px;
         overflow: hidden;
     }
     .content-wepper{
@@ -25,8 +25,8 @@
     }
 
     .content{
-        width: 200px;
-        height: 100px;
+        /* width: 200px;
+        height: 100px; */
         border: 1px solid #222 ;
         box-sizing: border-box;
         display: flex;
@@ -38,9 +38,6 @@
     }
     button{
         width: 50px;
-        height: 50px;
-        margin-top: 25px;
-        border-radius: 50%;
         background-color: transparent;
     }
     button:hover{
@@ -77,22 +74,35 @@
   
 
     <script>
+        const slider = document.querySelector('.slider');
+
         const ul = document.querySelector('.content-wepper');
         const nextButton = document.getElementById('next');
         const prevButton = document.getElementById('prev');
-        let trans = 0;
         
+        const sliderWidth = slider.clientWidth;
+        const sliderHeigth = slider.clientHeight;
+
+        console.log(sliderWidth,sliderHeigth)
+       
+        let index = 0;
+
+        for(let i = 0; i < ul.childElementCount; i++){
+            ul.children[i].style.width = `${sliderWidth}px`
+            ul.children[i].style.height = `${sliderHeigth}px`
+        }
+
         prevButton.addEventListener('click',()=>{
-            trans = trans - 200;
+            index--;
             위치적용();
         })
 
         nextButton.addEventListener('click',()=>{
-            trans = trans + 200;
+            index++;
             위치적용();
         })
         function 위치적용(){
-            ul.style.transform = `translateX(-${trans}px)`
+            ul.style.transform = `translateX(-${index * sliderWidth}px)`
         }
         
 

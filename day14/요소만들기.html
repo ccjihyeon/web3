@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contaianner">
+    </div>
+
+    <button id="print">
+        출력
+    </button>
+
+    <script>
+        const button = document.getElementById('print');
+        const contaianner = document.getElementById('contaianner');
+
+        button.addEventListener('click',()=>{
+            const pTag = document.createElement('p');
+            const pInner = document.createTextNode('안녕하세요');
+
+            const delSpan = document.createElement('span');
+            const delSpanInner = document.createTextNode('[삭제]');
+
+            delSpan.addEventListener('click', () => {
+                console.log('클릭')
+                pTag.remove();
+
+            })
+
+            pTag.addendChild(pInner);
+            pTag.addendChild(delSpanInne);
+
+            contaianner.appendChild(pTag);
+        })
+
+    </script>
+</body>
+</html>
