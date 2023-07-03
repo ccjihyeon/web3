@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="contaianner">
+    <div id="contaianer">
     </div>
 
     <button id="print">
@@ -15,7 +15,7 @@
 
     <script>
         const button = document.getElementById('print');
-        const contaianner = document.getElementById('contaianner');
+        const contaianer = document.getElementById('contaianer');
 
         button.addEventListener('click',()=>{
             const pTag = document.createElement('p');
@@ -27,13 +27,12 @@
             delSpan.addEventListener('click', () => {
                 console.log('클릭')
                 pTag.remove();
-
             })
 
             pTag.addendChild(pInner);
-            pTag.addendChild(delSpanInne);
+            pTag.addendChild(delSpanInner);
 
-            contaianner.appendChild(pTag);
+            contaianer.appendChild(pTag);
         })
 
     </script>
