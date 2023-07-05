@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test">
+
+
+    </div>
+    <script>
+        const content = document.querySelector('.test');    
+        
+        let contentWidth = content.clientWidth
+        content.innerText = contentWidth;
+        
+       
+        window.addEventListener('resize',() => {
+            let contentWidth = content.clientWidth
+            content.innerText = contentWidth;
+        })
+
+        // clientWidth = 크기를 가져오는 태그
+        // 윈도우 크기에따라 반응하게 만듬 (반응형) 
+    </script>
+</body>
+</html>

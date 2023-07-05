@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .place{
+        width: 50%;
+        height: 50vh;
+        background-color: antiquewhite;
+        margin: 100px auto;
+    }
+</style>
+<body>
+    <div class="place">
+
+    </div>
+
+    <script>
+        const place = document.querySelector('.place');
+        let 클릭X,클릭Y;
+        let isClicked = false;
+
+        place.addEventListener('mousedown',(e) => {
+            
+            e.preventDefault();
+            isClicked = true;
+            클릭X = e.clientX;
+            클릭Y = e.clientY;
+
+            console.log (클릭X,클릭Y);
+
+        })
+        place.addEventListener('mousemove',(e) => {
+            if(isClicked){
+            const 현재X = e.clientX;
+            const 현재Y = e.clientY;
+
+            place.innerHTML = "";
+            place.innerHTML += `X원점:${클릭X} Y원점:${클릭Y}`;
+            place.innerHTML += `X현재:${현재X} Y현재:${현재Y}`;
+            place.innerHTML += `X이동:${현재X - 클릭X} Y이동:${현재Y - 클릭Y}`;
+            }
+        })
+        place.addEventListener('mouseup',(e) => {
+            isClicked = false;
+        })
+
+        //마우스 움직임에 따라 넘어가는 슬라이더
+
+
+    </script>
+</body>
+</html>
